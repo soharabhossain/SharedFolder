@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <title>{{ title }}</title>
+  
+</head>
+<hr>
+
+<body style="background-color: #91bded;">
+        
+   
+  <center><h1>AgriTech-A Smart Irrigation System<h1></center>
+  <h3> IoT-based solution for automatic irrigation.</h3>
+  <h3> Use the Web-interface for remote monitoring and access.</h3>
+  <h3>Integrating weather API for forcasting the weather condition of the next few days.</h3>
+  <h3>This will help reduce wastage of water by smart descision making by a human operator through the web interface</h3>
+  <hr>
+
+  <h3>The date and time on the server is: {{ time }}</h3>
+  <h2> {{ text }} </h2>
+  <a href="/checkstatus"><button style = "background-color:#709aa5 ; border-radius:100px;border-color: #445b62;">Check Soil Status</button></a> <br> <br>
+  
+  <a href="/wateronce"><button style = "background-color:#709aa5; border-radius:100px;border-color: #445b62">Water Once</button></a> <br> <br>
+  
+  <a href="/lastwatered"><button style = "background-color:#709aa5; border-radius:100px;border-color:#445b62 ">Check Time Last Watered</button></a> <br>
+
+<hr>
+
+<!-- the DIV that will contain the weather widget -->
+<div class="title">
+    <center><h1>Weather Forecast for next 7 Days</h1></center>
+</div>
+<hr>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-afff0527-a375-4e5b-895b-5a7d52b34d4f"></div>
+
+<script>
+window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  
+window.myWidgetParam.push({
+    id: 11,
+    cityid: '2643743',
+    appid: '5c75f859c1f5e4f9edce8f452716f74c',
+    units: 'metric',
+    containerid: 'openweathermap-widget-11',
+    });  
+
+(function() 
+{
+var script = document.createElement('script');
+script.async = true;
+script.charset = "utf-8";
+script.src ="//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(script, s);  
+})();
+</script>
+
+<hr>
+</body>
+</html>
